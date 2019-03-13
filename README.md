@@ -12,7 +12,7 @@ El método net.createServer devuelve un objeto servidor mediante una callback. L
 
 ## Escribir datos en un Socket.
 
-captura net-watcher.js
+![net-watcher_js](https://user-images.githubusercontent.com/44870064/54293991-c9902480-45a8-11e9-8b37-d70370d51790.png)
 
 En este caso, vamos a utilizar el programa anterior, al que llamaremos net-watcher.js, al que le pasamos el nombre del fichero a observar como argumento y devolvera un error personalizado en caso de que no le pasemos algo correcto.
 
@@ -28,7 +28,7 @@ Para probar el prograa anterior necesitaremos 3 terminales:
 En una terminal y mediante el comando usaremos el comando #watch -n 1 touch target.txt para modificar el fichero cada segundo.
 En la segunda, ejecutaremos el servidor node #net-watcher.js target.txt y por último, usaremos Netcat para conectarnos. Usaremos #nc localhost 60300.
 
-captura ejecucion_net_watcher
+![ejecucion_net_watcher](https://user-images.githubusercontent.com/44870064/54293974-c7c66100-45a8-11e9-98ab-909b04477a92.png)
 
 ## Escuchando en Sockets Unix.
 
@@ -62,19 +62,19 @@ A continuación modificamos el servicio net-watcher para emplear el protocolo qu
 
 La modificación la haremos en conection.write, quedando el fichero de la siguiente manera:
 
-captura net_watcher_json_code
+![net_watcher_json_code](https://user-images.githubusercontent.com/44870064/54293994-ca28bb00-45a8-11e9-9d3e-e4f741a5ff2e.png)
 
 Ahora ejecutamos este archivo quedando la ejecucion de la siguiente manera:
 
-captura net_watcher_json
+![net-watcher-jason](https://user-images.githubusercontent.com/44870064/54293990-c9902480-45a8-11e9-85d7-10c7d1fd1e57.png)
 
 ## Creación de cliente de conexiones sockets.
 
-captura net_watcher_json-client
+![net_watcher_json_client_code](https://user-images.githubusercontent.com/44870064/54293993-c9902480-45a8-11e9-87ac-8758f9411930.png)
 
 Este programa es un pequeño cliente que utiliza net.connect para crear una conexión cliente en el puerto especificado del localhost. Cuando llega algún dato es parseado y se muestra adecuadamente por consola.
 
-captura net_watcher_client_json
+![net-watcher-json-client](https://user-images.githubusercontent.com/44870064/54293992-c9902480-45a8-11e9-9ba6-5e04fc21965f.png)
 
 ## Problema del límite de mensajes.
 
@@ -82,7 +82,7 @@ En el mejor de los casos los mensajes llegarán a la vez. El problema es que a v
 
 El protocolo LDJ que desarrollamos anteriormente separa los mensajes con nuevas lineas. Quedando el codigo de la siguiente manera:
 
-captura ldj_code
+![ldj_code](https://user-images.githubusercontent.com/44870064/54293988-c8f78e00-45a8-11e9-94f1-f7d05b05f42e.png)
 
 ## Implementando un servicio de pruebas.
 
@@ -95,11 +95,11 @@ Herencia en Node.
 
 ## Eventos de datos de almacenamiento en buffer.
 
-captura cliente_ldj_primitive_code
+![ldj_client_primitive_code](https://user-images.githubusercontent.com/44870064/54293978-c85ef780-45a8-11e9-923d-eb73587d0e91.png)
 
 ## Exportando funcionalidad en un módulo
 
-captura ldj-client_add
+![ldj-client_add](https://user-images.githubusercontent.com/44870064/54293976-c85ef780-45a8-11e9-8f00-22b9af0dab1a.png)
 
 Dentro de la definición de clase, después del constructor, estamos agregando un método estático llamado connect.
 
@@ -107,6 +107,7 @@ El código para usar el módulo sería algo como esto
 
 ## Importando un módulo Node.js
 
+![net-watcher-ldj-client_code](https://user-images.githubusercontent.com/44870064/54293995-ca28bb00-45a8-11e9-9482-662a9fd29040.png)
 captura net-watcher-ldj-client-code
 
 La principal diferencia respecto a lo anterior es que, en lugar de enviar buffers de datos directamente a JSON.parse , este programa se basa en el módulo ldj-client para producir eventos de mensajes. Finalmente, ejecutamos el servidor de pruebas y el nuevo cliente.
@@ -130,7 +131,7 @@ Creamos un subdirectorio llamado test que es donde por defecto Mocha buscará.
 
 Desarrollamos un fichero de pruebas, quedando su código de la siguiente manera:
 
-captura ldj_client_test_code
+![ldj_client_test_code](https://user-images.githubusercontent.com/44870064/54293981-c8f78e00-45a8-11e9-9598-e6f36bb76dce.png)
 
 ### Ejecución.
 
@@ -145,36 +146,39 @@ A continuación, ejecutamos con el comando #npm test.
 Para el desarrollo de la práctica se nos ha pedido realizar más ficheros de prueba para algunos casos determinados:
 - Prueba divide el mensaje en dos partes para ser emitidas por el stream uno después del otro.
 
-captura ldj-client-test-split
+![ldj-client-test-split](https://user-images.githubusercontent.com/44870064/54293986-c8f78e00-45a8-11e9-8e31-193186aac0dc.png)
 
 - Prueba que pasa un objecto nulo y detecta el error.
 
-captura ldj-client-test-null
+![ldj-client-test-null](https://user-images.githubusercontent.com/44870064/54293984-c8f78e00-45a8-11e9-9025-40142ee69f28.png)
 
 -Prueba para enviar y detectar el error de pasar un mensaje que no es JSON.
 
-captura ldj-client-test-not-json
+![ldj_client_test_not_json](https://user-images.githubusercontent.com/44870064/54293983-c8f78e00-45a8-11e9-8f54-e3af1946046f.png)
 
 - Prueba que en case de falta del último salto de linea lo que pasa es que se quedará esperando y nunca emitirá el mensaje. Para poder manejar esta situación implementamos un evento close que comprobará si existe o no un \n al final del JSON. En caso de no existir lanza el error o, en caso contrario, emite el mensaje.
 
-captura ldj-client-test-close
+![ldj_client_test_close](https://user-images.githubusercontent.com/44870064/54293980-c85ef780-45a8-11e9-8be9-b78324f824cf.png)
 
 Para que estas pruebas tengan un correcto funcionamiento hemos tenido que modificar el fichero ldj-client para que las pruebas se pudieran realizar correctamente, quedando de la siguiente manera:
 
-captura ldj_client_complete_code
+![ldj_client_code_complete](https://user-images.githubusercontent.com/44870064/54293977-c85ef780-45a8-11e9-877e-a288a2134e74.png)
 
 ## Resultado de los tests
 
 Tras realizar todos los ficheros de pruebas y modificar el fichero ldj-client.js realizamos de nuevo las pruebas y vemos los resultados de las mismas:
 
-captura test
+![test](https://user-images.githubusercontent.com/44870064/54294000-cac15180-45a8-11e9-8173-fbeab8d812be.png)
 
 ## Travis
 [![Build Status](https://travis-ci.org/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101018300.svg?branch=master)](https://travis-ci.org/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101018300)
 
-captura travis_bien
+![travis_ok](https://user-images.githubusercontent.com/44870064/54294006-cbf27e80-45a8-11e9-94ca-a7e22b7fb7b3.png)
 
 ## Reto
 Como reto se nos pidio que realizaramos un chat, quedando el codigo del mismo de la siguiente manera:
 
-captura reto_code
+![reto_code](https://user-images.githubusercontent.com/44870064/54293996-ca28bb00-45a8-11e9-90ef-595cfaf48094.png)
+
+
+
