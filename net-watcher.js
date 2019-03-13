@@ -20,5 +20,5 @@
  	  connection.on('close', () => {
  	    console.log('Subscriber disconnected.');
  	    watcher.close();
-​ 	  });
-​ 	}).listen(60300, () => console.log(​'Listening for subscribers...'​));
+ 	  });
+ 	}).listen(60300, () => console.log('Listening for subscribers...'));
