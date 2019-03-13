@@ -12,7 +12,7 @@ describe('LDJClient', () => {
       client = new LDJClient(stream);
     });
   it('should throw an error message if it is not a JSON text.', done => {    assert.throws( () => {
-      stream.emit('data', 'Not JSON message  ');
+      stream.emit('data', '{"foo\n');
       });
       done();
   });

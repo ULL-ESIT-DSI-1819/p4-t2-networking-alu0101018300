@@ -4,12 +4,14 @@
   "description": "",
   "main": "net-watcher-json-client.js",
   "scripts": {
-    "test":"mocha" 
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-shell": "^0.7.0",
     "mocha": "3.4.2"
   }
 }
