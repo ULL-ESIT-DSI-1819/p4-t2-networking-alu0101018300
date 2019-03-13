@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha"
   },
-  "  "keywords": [],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
