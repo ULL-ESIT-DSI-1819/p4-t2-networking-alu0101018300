@@ -1,3 +1,6 @@
+/** gulpfile.js
+* @author Adrián Ramos Mejías - Grado en Ingeniería Informática ULL
+*/
 'use strict';
 const assert = require('assert');
 const EventEmitter = require('events').EventEmitter;
