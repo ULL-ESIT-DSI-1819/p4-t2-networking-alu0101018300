@@ -138,7 +138,7 @@ Para poder ejecutar tenemos que añadir en el package.json lo siguiente en la se
 
 A continuación, ejecutamos con el comando #npm test.
 
-captura mocha_1
+![mocha](https://user-images.githubusercontent.com/44870064/54288363-428a7e80-459f-11e9-9dd2-d3b349633752.png)
 
 ## Ejercicio Testability y Robustness
 
@@ -173,3 +173,8 @@ captura test
 [![Build Status](https://travis-ci.org/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101018300.svg?branch=master)](https://travis-ci.org/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101018300)
 
 captura travis_bien
+
+## Reto
+Como reto se nos pidio que realizaramos un chat, quedando el codigo del mismo de la siguiente manera:
+
+captura reto_code
