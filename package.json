@@ -1,22 +1,20 @@
 {
-  "name": "",
-  "version": "1.0.0",
-  "description": "",
-  "main": "net-watcher-json-client.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jsdoc": "^3.5.5",
-    "mocha": "3.4.2"
-  },
+  "requires": true,
+  "lockfileVersion": 1,
   "dependencies": {
-    "dev-null": "^0.1.1",
-    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
     "gulp-shell": "^0.7.0",
-    "make": "^0.8.1"
+    "node-watch": "^0.6.0",
+    "promise": {
+      "integrity": "sha512-EIyzM39FpVOMbqgzEHhxdrEhtOSDOtjMZQ0M6iVfCE+kWNgCkAyOdnuCWqfmflylftfadU6FkiMgHZA2kUzwRw==",
+      "requires": {
+        "asap": "~2.0.6"
+      },
+      "resolved": "https://registry.npmjs.org/promise/-/promise-8.0.2.tgz",
+      "version": "8.0.2"
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
