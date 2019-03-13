@@ -1,21 +1,20 @@
 {
-  "name": "networking",
-  "version": "1.0.0",
-  "description": "",
-  "main": "net-watcher-json-client.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101018300/issues"
-  },
-"homepage": "https://github.com/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101018300#readme",
-  "devDependencies": {
-    "gulp": "^4.0.0",
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "gulp-cli": "^2.0.1",
     "gulp-shell": "^0.7.0",
-    "mocha": "3.4.2"
+    "node-watch": "^0.6.0",
+    "promise": {
+      "integrity": "sha512-EIyzM39FpVOMbqgzEHhxdrEhtOSDOtjMZQ0M6iVfCE+kWNgCkAyOdnuCWqfmflylftfadU6FkiMgHZA2kUzwRw==",
+      "requires": {
+        "asap": "~2.0.6"
+      },
+      "resolved": "https://registry.npmjs.org/promise/-/promise-8.0.2.tgz",
+      "version": "8.0.2"
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
