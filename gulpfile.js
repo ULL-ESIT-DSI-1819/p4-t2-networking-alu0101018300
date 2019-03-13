@@ -14,5 +14,5 @@ gulp.task("pre-install", shell.task([
   "npm install -g gulp-shell"
 ]));
 
-gulp.task("doc", shell.task("jsdoc "));
+gulp.task("doc", shell.task("jsdoc"));
 gulp.task("test", shell.task("npm test"));
